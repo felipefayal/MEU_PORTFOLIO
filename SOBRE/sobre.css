@@ -1,0 +1,200 @@
+.sobre-grid-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "intro side"
+        "interpersonal side";
+    gap: 25px;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.intro-panel { grid-area: intro; }
+.skills-panel { grid-area: interpersonal; }
+.side-panels-container { grid-area: side; }
+
+.terminal-window {
+    border: 2px solid var(--cor-neon-cyan);
+    background-color: rgba(10, 4, 26, 0.6);
+    box-shadow: var(--sombra-brilho-cyan);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+}
+
+.terminal-header {
+    background-color: #1a1a2e;
+    padding: 8px 15px;
+    border-bottom: 1px solid var(--cor-neon-cyan);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.terminal-body {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.intro-content {
+    display: flex;
+    align-items: center;
+    gap: 30px; 
+}
+
+.avatar-container {
+    width: 180px;  
+    height: 180px; 
+    flex-shrink: 0;
+    border: 2px solid var(--cor-neon-cyan);
+    box-shadow: var(--sombra-brilho-cyan);
+    border-radius: 50%; 
+    padding: 5px; 
+    background: rgba(0, 246, 255, 0.1);
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 50%;
+    transition: transform 0.5s ease;
+}
+
+.avatar-img:hover {
+    transform: scale(1.1);
+}
+
+.texto-container .prompt { 
+    color: var(--cor-neon-cyan); 
+    display: inline-block; 
+    overflow: hidden; 
+    white-space: nowrap; 
+    border-right: 3px solid var(--cor-neon-magenta); 
+    width: 0;
+    animation: 
+        typing 3s steps(15, end) forwards, 
+        blink-caret .75s step-end infinite; 
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 253px } 
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--cor-neon-magenta); }
+}
+
+.texto-container h1 { font-size: 2.5rem; margin-bottom: 5px; color: var(--cor-neon-cyan); }
+.texto-container h2 { font-size: 1.2rem; margin-bottom: 15px; }
+.texto-container p { font-size: 1rem; line-height: 1.6; text-align: left;}
+
+.cta-button {
+    display: inline-block;
+    border: 2px solid var(--cor-neon-magenta);
+    padding: 8px 20px;
+    margin-top: 20px;
+    color: var(--cor-neon-magenta);
+    box-shadow: var(--sombra-brilho-magenta);
+    transition: background-color 0.3s, color 0.3s;
+}
+.cta-button:hover {
+    background-color: var(--cor-neon-magenta);
+    color: var(--cor-fundo-escuro);
+}
+
+.side-panels-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.icon-skills-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.icon-skills-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+.icon-skills-list li:hover {
+    color: var(--cor-neon-magenta);
+    text-shadow: 0 0 8px var(--cor-neon-magenta);
+    cursor: default;
+}
+
+.skill-icon {
+    width: 48px;
+    height: 48px;
+}
+
+.side-panel .terminal-body p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.skills-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.skills-list li {
+    margin-bottom: 15px; 
+    color: var(--cor-texto-principal);
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+    cursor: default;
+}
+
+.skills-list li:hover {
+    transform: scale(1.05); 
+    color: var(--cor-neon-cyan);
+}
+
+@media (max-width: 768px) {
+
+.sobre-grid-container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "intro"
+    "side"
+    "interpersonal";
+    margin: 0 15px; 
+}
+
+.intro-content {
+    flex-direction: column;
+    text-align: center;
+}
+
+.texto-container p {
+    text-align: center;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 253px } 
+}
+
+.texto-container h1 { font-size: 2rem; }
+.texto-container h2 { font-size: 1rem; }
+
+.avatar-container {
+    width: 150px;
+    height: 150px;
+}
+
+.skill-icon {
+    width: 38px;
+    height: 38px;
+}
+
+}

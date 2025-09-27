@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+    --cor-fundo-escuro: #05020D;
+    --cor-texto-principal: #F0F0F0;
+    --cor-neon-cyan: #00f6ff;
+    --cor-neon-magenta: #ff00ff;
+    --sombra-brilho-cyan: 0 0 3px var(--cor-neon-cyan), 0 0 8px var(--cor-neon-cyan);
+    --sombra-brilho-magenta: 0 0 5px var(--cor-neon-magenta), 0 0 10px var(--cor-neon-magenta);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--cor-fundo-escuro);
+    color: var(--cor-texto-principal);
+    font-family: 'Press Start 2P', cursive; 
+    font-size: 12px;
+    line-height: 1.7;
+    background-image: 
+        linear-gradient(rgba(5, 2, 13, 0.6), rgba(5, 2, 13, 0.6)), 
+        url('../IMG/background.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+a {
+    color: var(--cor-neon-cyan);
+    text-decoration: none;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+a:hover {
+    color: var(--cor-neon-magenta);
+    text-shadow: var(--sombra-brilho-magenta);
+}
