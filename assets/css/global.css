@@ -98,7 +98,7 @@ header {
 }
 
 .logo {
-    height: 100px;
+    height: 85px;
     filter: drop-shadow(0 0 5px var(--cor-neon-cyan));
     transition: transform 0.3s;
 }
@@ -241,6 +241,23 @@ header {
     box-shadow: 0 0 15px var(--cor-neon-magenta);
 }
 
+/* Fade Animations */
+.fade-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    will-change: opacity, transform;
+}
+
+.fade-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delay-100 { transition-delay: 0.1s; }
+.delay-200 { transition-delay: 0.2s; }
+.delay-300 { transition-delay: 0.3s; }
+
 @media (max-width: 768px) {
     .nav-conteiner-desktop {
         display: none; 
@@ -255,7 +272,7 @@ header {
     }
 
     .logo {
-        height: 80px; 
+        height: 75px; 
     }
     
     header {
@@ -265,5 +282,4 @@ header {
     p, h1, h2, h3 {
         word-wrap: break-word;
     }
-    
 }
